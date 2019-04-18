@@ -8,6 +8,9 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
+
+import com.astuetz.PagerSlidingTabStrip;
+
 import java.util.ArrayList;
 
 public class News extends AppCompatActivity {
@@ -23,18 +26,26 @@ public class News extends AppCompatActivity {
         //az intent ghabl(news) pas dade shode vali defult value ro nmidanestm chan bezarm :)
         newsOrAnnouncement= getIntent().getStringExtra("which_news_or_announcement");
 
-        ViewPager vpPager = (ViewPager) findViewById(R.id.vpPager);
+      /*  ViewPager vpPager = (ViewPager) findViewById(R.id.vpPager);
         adapterViewPager = new MyPagerAdapter(getSupportFragmentManager() ,newsOrAnnouncement);
-        vpPager.setAdapter(adapterViewPager);
+        vpPager.setAdapter(adapterViewPager);*/
 
+        ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);
+        viewPager.setAdapter(new MyPagerAdapter(getSupportFragmentManager() , newsOrAnnouncement));
 
-        //___in tike ro nmidoonm chikar mikone__//
-        vpPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        // Give the PagerSlidingTabStrip the ViewPager
+        PagerSlidingTabStrip tabsStrip = (PagerSlidingTabStrip) findViewById(R.id.tabs);
+        // Attach the view pager to the tab strip
+        tabsStrip.setViewPager(viewPager);
+
+        //__fateme in tike nmidoonm chie
+        // Attach the page change listener to tab strip and **not** the view pager inside the activity
+        tabsStrip.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
             // This method will be invoked when a new page becomes selected.
             @Override
             public void onPageSelected(int position) {
-                /* Toast.makeText(News.this,
+                /*Toast.makeText(HomeActivity.this,
                         "Selected page position: " + position, Toast.LENGTH_SHORT).show();*/
             }
 
@@ -51,7 +62,6 @@ public class News extends AppCompatActivity {
                 // Code goes here
             }
         });
-
 
     }
 
