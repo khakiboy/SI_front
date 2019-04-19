@@ -15,4 +15,11 @@
         <color name="divider">#BDBDBD</color>
 
 
+
+    <color name="colorIconBlue">#42a4f4</color>
+    <color name="colorIconGray">#cccdce</color>
+    <color name="colorBackground">#eff1f2</color>
+    <color name="colorWhite">#ffffff</color>
+
+
 </resources>

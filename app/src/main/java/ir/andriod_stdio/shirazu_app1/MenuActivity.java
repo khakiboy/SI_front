@@ -51,6 +51,8 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // bere be page email
+                Intent intent = new Intent( MenuActivity.this,EmailActivity.class);
+                startActivity(intent);
             }
         });
 
