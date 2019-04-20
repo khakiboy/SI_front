@@ -13,11 +13,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="3dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="0dp"
-        android:layout_marginEnd="3dp"
+        android:layout_marginEnd="8dp"
         android:orientation="horizontal"
-        android:weightSum="2">
+        android:weightSum="4">
 
         <Button
             android:id="@+id/news"
@@ -25,6 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_alignStart="@+id/line1"
             android:layout_marginTop="100dp"
+
             android:layout_weight="1"
             android:background="@color/primary_light"
             android:drawableTop="@drawable/ic_newsicon2"
@@ -32,13 +33,18 @@
             android:paddingTop="20sp"
             android:paddingBottom="32sp"
             android:text="@string/news"
-            android:textColor="@color/primary_text"></Button>
+            android:textColor="@color/primary_text"
+            android:textAllCaps="false"></Button>
 
         <Button
             android:id="@+id/announcement"
             android:layout_width="190dp"
             android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/line1"
+            android:layout_alignBottom="@+id/line1"
             android:layout_marginTop="100dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginEnd="0dp"
             android:layout_weight="1"
             android:background="@color/primary_light"
             android:drawableTop="@drawable/ic_announcement"
@@ -46,7 +52,10 @@
             android:paddingTop="20sp"
             android:paddingBottom="32sp"
             android:text="@string/announcement"
-            android:textColor="@color/primary_text"></Button>
+            android:textColor="@color/primary_text"
+            android:textAllCaps="false">
+
+        </Button>
 
 
     </LinearLayout>
@@ -54,17 +63,18 @@
 
     <Button
         android:id="@+id/email"
-        android:layout_width="190dp"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@id/line1"
-        android:layout_marginStart="3dp"
-        android:layout_marginBottom="-171dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="-176dp"
         android:background="@color/primary_light"
         android:drawableTop="@drawable/ic_email"
         android:drawablePadding="0dp"
         android:paddingTop="20sp"
         android:paddingBottom="32sp"
         android:text="@string/email"
+        android:textAllCaps="false"
         android:textColor="@color/primary_text"></Button>
 
 
