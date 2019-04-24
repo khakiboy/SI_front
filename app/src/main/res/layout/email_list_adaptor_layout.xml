@@ -11,7 +11,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:contentDescription="@string/app_name"
-        android:layout_marginStart="1.5dp"
+        android:layout_marginStart="2dp"
         android:layout_centerVertical="true"
 
 

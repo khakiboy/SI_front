@@ -219,7 +219,7 @@ public class EmailMenueActivity extends Fragment {
         Toast check = Toast.makeText(getActivity(), "inbox", Toast.LENGTH_SHORT);
         // check.show();
         //bara in ke too safe ba'd neshoon bedim che etelaati namayesh bede sent ya inbox
-        Intent intent = new Intent(EmailMenueActivity.this.getActivity() , EmailShow.class);
+        Intent intent = new Intent(EmailMenueActivity.this.getActivity() , EmailMenueActivity.class);
         intent.putExtra("which_Inbox_or_sent_or_Draft" , "i");
         startActivity(intent);
 
@@ -228,13 +228,13 @@ public class EmailMenueActivity extends Fragment {
     }
     public void openDrafts(){
         Toast check = Toast.makeText(getActivity(), "drafts", Toast.LENGTH_SHORT);
-        Intent intent = new Intent(EmailMenueActivity.this.getActivity() , EmailShow.class);
+        Intent intent = new Intent(EmailMenueActivity.this.getActivity() , EmailMenueActivity.class);
         intent.putExtra("which_Inbox_or_sent_or_Draft" , "d");
         startActivity(intent);
     }
     public void openSent(){
         Toast check = Toast.makeText(getActivity(), "sent", Toast.LENGTH_SHORT);
-        Intent intent = new Intent(EmailMenueActivity.this.getActivity() , EmailShow.class);
+        Intent intent = new Intent(EmailMenueActivity.this.getActivity() , EmailMenueActivity.class);
         intent.putExtra("which_Inbox_or_sent_or_Draft" , "s");
         startActivity(intent);
     }

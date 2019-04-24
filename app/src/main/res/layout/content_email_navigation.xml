@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".EmailNavigation"
+    tools:showIn="@layout/app_bar_email_navigation">
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".EmailShow">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <ListView
+                android:id="@+id/list_item"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="#bebebe"
+                android:dividerHeight="0.5sp">
+
+            </ListView>
+
+
+        </LinearLayout>
+
+
+
+
+    </FrameLayout>
+</android.support.constraint.ConstraintLayout>

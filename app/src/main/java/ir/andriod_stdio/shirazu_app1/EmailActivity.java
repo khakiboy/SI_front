@@ -1,5 +1,6 @@
 package ir.andriod_stdio.shirazu_app1;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -36,11 +37,15 @@ public class EmailActivity extends AppCompatActivity {
             @Override
             public void onClick(View login) {
 
-                EmailMenueActivity emailMenuFrame = new EmailMenueActivity();
+              /*  EmailMenueActivity emailMenuFrame = new EmailMenueActivity();
                 getFragmentManager().beginTransaction()
                         .add(R.id.frame_container,emailMenuFrame)
                         .addToBackStack(null)
-                        .commit();
+                        .commit();*/
+                Intent intent = new Intent( EmailActivity.this,EmailNavigation.class);
+                //bara ye news.java moshakhas konim k alan news ro baz karde ya announcement
+                intent.putExtra("which_Inbox_or_sent_or_Draft" , "i");
+                startActivity(intent);
             }
         });
     }
