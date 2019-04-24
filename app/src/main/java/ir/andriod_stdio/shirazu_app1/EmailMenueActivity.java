@@ -1,6 +1,7 @@
 package ir.andriod_stdio.shirazu_app1;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
@@ -53,6 +54,8 @@ public class EmailMenueActivity extends Fragment {
 
         findviews(view);
         onclick();
+
+
     }
 
     private void findviews(View view){
@@ -214,12 +217,26 @@ public class EmailMenueActivity extends Fragment {
 
     public void openInbox(){
         Toast check = Toast.makeText(getActivity(), "inbox", Toast.LENGTH_SHORT);
+        // check.show();
+        //bara in ke too safe ba'd neshoon bedim che etelaati namayesh bede sent ya inbox
+        Intent intent = new Intent(EmailMenueActivity.this.getActivity() , EmailShow.class);
+        intent.putExtra("which_Inbox_or_sent_or_Draft" , "i");
+        startActivity(intent);
+
+
+
     }
     public void openDrafts(){
         Toast check = Toast.makeText(getActivity(), "drafts", Toast.LENGTH_SHORT);
+        Intent intent = new Intent(EmailMenueActivity.this.getActivity() , EmailShow.class);
+        intent.putExtra("which_Inbox_or_sent_or_Draft" , "d");
+        startActivity(intent);
     }
     public void openSent(){
         Toast check = Toast.makeText(getActivity(), "sent", Toast.LENGTH_SHORT);
+        Intent intent = new Intent(EmailMenueActivity.this.getActivity() , EmailShow.class);
+        intent.putExtra("which_Inbox_or_sent_or_Draft" , "s");
+        startActivity(intent);
     }
     public void openTrash(){
         Toast check = Toast.makeText(getActivity(), "trash", Toast.LENGTH_SHORT);

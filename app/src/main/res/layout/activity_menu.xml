@@ -25,16 +25,15 @@
             android:layout_height="wrap_content"
             android:layout_alignStart="@+id/line1"
             android:layout_marginTop="100dp"
-
             android:layout_weight="1"
-            android:background="@color/primary_light"
+            android:background="@drawable/button_background"
             android:drawableTop="@drawable/ic_newsicon2"
             android:drawablePadding="0dp"
             android:paddingTop="20sp"
             android:paddingBottom="32sp"
             android:text="@string/news"
-            android:textColor="@color/primary_text"
-            android:textAllCaps="false"></Button>
+            android:textAllCaps="false"
+            android:textColor="@color/primary_text"></Button>
 
         <Button
             android:id="@+id/announcement"
@@ -42,18 +41,18 @@
             android:layout_height="wrap_content"
             android:layout_alignEnd="@+id/line1"
             android:layout_alignBottom="@+id/line1"
-            android:layout_marginTop="100dp"
             android:layout_marginStart="3dp"
+            android:layout_marginTop="100dp"
             android:layout_marginEnd="0dp"
             android:layout_weight="1"
-            android:background="@color/primary_light"
+            android:background="@drawable/button_background"
             android:drawableTop="@drawable/ic_announcement"
             android:drawablePadding="0dp"
             android:paddingTop="20sp"
             android:paddingBottom="32sp"
             android:text="@string/announcement"
-            android:textColor="@color/primary_text"
-            android:textAllCaps="false">
+            android:textAllCaps="false"
+            android:textColor="@color/primary_text">
 
         </Button>
 
@@ -68,7 +67,7 @@
         android:layout_alignBottom="@id/line1"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="-176dp"
-        android:background="@color/primary_light"
+        android:background="@drawable/button_background"
         android:drawableTop="@drawable/ic_email"
         android:drawablePadding="0dp"
         android:paddingTop="20sp"
