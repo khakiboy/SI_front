@@ -8,10 +8,10 @@
 
     <ImageView
         android:id="@+id/emailprofile_img"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
         android:contentDescription="@string/app_name"
-        android:layout_marginStart="2dp"
+        android:layout_marginStart="5dp"
         android:layout_centerVertical="true"
 
 
@@ -45,7 +45,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
                 android:gravity="end"
-
+                android:layout_marginEnd="5dp"
                 android:textColor="@color/secondary_text" />
 
         </LinearLayout>
@@ -64,6 +64,7 @@
             android:id="@+id/summeryOfemail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
 
             android:gravity="end"
             android:textColor="@color/secondary_text"

@@ -13,8 +13,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.amulyakhare.textdrawable.TextDrawable;
+import com.amulyakhare.textdrawable.util.ColorGenerator;
 
 import java.util.ArrayList;
 
@@ -25,11 +30,14 @@ public class EmailNavigation extends AppCompatActivity
     private ArrayList<EmailsRow> UserArrayList;
     private String inboxOrSentOrDraft;
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_email_navigation);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar1);
         setSupportActionBar(toolbar);
 
 
@@ -43,21 +51,41 @@ public class EmailNavigation extends AppCompatActivity
         });
 
 
-
+        setSupportActionBar(toolbar);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+        final ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
 
+
+
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        View headerView = navigationView.getHeaderView(0);
+        TextView navUsername = (TextView) headerView.findViewById(R.id.nav_emailusername);
+        TextView navEmailAddres = (TextView) headerView.findViewById(R.id.nav_emailAddress);
+        ImageView navImageView =(ImageView)headerView.findViewById(R.id.nav_imageView);
+
+        navUsername.setText("fateme");
+        navEmailAddres.setText("example@shirazU.ac.ir");
+        String firstLetter = String.valueOf("fateme".charAt(0));
+        ColorGenerator generator = ColorGenerator.MATERIAL;
+        int color = generator.getRandomColor();
+        TextDrawable drawable = TextDrawable.builder().buildRound(firstLetter, color); // radius in px
+        navImageView.setImageDrawable(drawable);
         navigationView.setNavigationItemSelectedListener(this);
 
 
 
 
-        //_____________________
+
+
+
+
+
+
+        //____________________________________________________
         inboxOrSentOrDraft= getIntent().getStringExtra("which_Inbox_or_sent_or_Draft");//bara inke befahmim che page ii baz she
         listView = (ListView) findViewById(R.id.list_item);
 
@@ -68,7 +96,7 @@ public class EmailNavigation extends AppCompatActivity
         }else if (inboxOrSentOrDraft.equals("d")){
             toolbar.setTitle("Draft");
         }
-        setSupportActionBar(toolbar);
+       // setSupportActionBar(toolbar);
 
         setData();// inja too ye in tabe bayad tasimim begrim k sent ha namayesh dade bashan ya inbox ha
 
@@ -108,9 +136,14 @@ public class EmailNavigation extends AppCompatActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_addacount) {
+            return true;
+        }
+        if( id==R.id.action_logOut){
+            /////////in ja karaii k bara log out hast to anjam mididm
+            Intent intent = new Intent( EmailNavigation.this,EmailActivity.class);
+            startActivity(intent);
             return true;
         }
 
