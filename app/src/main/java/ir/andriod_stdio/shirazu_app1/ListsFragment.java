@@ -17,6 +17,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListView;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 
 
@@ -94,19 +100,11 @@ public class ListsFragment extends Fragment {
         allRows = new ArrayList<>();
 
         Bitmap icon = BitmapFactory.decodeResource(getResources(),R.drawable.ic_launcher_background);
-        //****************************************
-        allRows.add(new NewsRaw("نشست بررسی زیبایی شناسی در  مینای ایرانی درباره قاجار در باغ موزه نگارستان","1398/1/27","گروه حفاظت ایکوم ایران با همکاری  مجموعه باغ" ,icon));
-        allRows.add(new NewsRaw("title","date","summery",icon));
-        allRows.add(new NewsRaw("titlscdce","date","summery",icon));
-        allRows.add(new NewsRaw("title","date","summery",icon));
-        allRows.add(new NewsRaw("title","date","summery",icon));
-        allRows.add(new NewsRaw("title","date","suddmmery",icon));
-        allRows.add(new NewsRaw("tccitle","date","summery",icon));
-        allRows.add(new NewsRaw("title","date","summery",icon));
-        allRows.add(new NewsRaw("title","date","summery",icon));
-        allRows.add(new NewsRaw("title","date","summe445ry",icon));
-
-        //*************************************
+        //******************************Inja news hayi k az server gereftam ro set kardam****************************karim
+        for(int i=0;i<MainActivity.allnews.size();i++){
+            allRows.add(new NewsRaw(MainActivity.allnews.get(i).subject,MainActivity.allnews.get(i).date,MainActivity.allnews.get(i).context,icon));
+        }
+        //******************************Inja news hayi k az server gereftam ro set kardam****************************karim
 
 
         NewsListAdapter  adapter = new NewsListAdapter(this.getContext() , R.layout.adapter_view_layout , allRows);

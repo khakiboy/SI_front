@@ -21,7 +21,6 @@ public class MenuActivity extends AppCompatActivity {
         news = (Button) findViewById(R.id.news);
         announcement = (Button) findViewById(R.id.announcement);
         email = (Button) findViewById(R.id.email);
-
         //_________________
 
         news.setOnClickListener(new View.OnClickListener() {
